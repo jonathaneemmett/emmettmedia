@@ -1,9 +1,11 @@
 'use client';
 import React, { FormEvent, useState } from 'react';
+import { useAppContext } from '@/app/context/AppContext';
 
 const LoginPage = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const { auth } = useAppContext();
 
 	async function submitHandler(e: FormEvent<HTMLElement>) {
 		e.preventDefault();
